@@ -734,3 +734,168 @@ values = []
 for x in range(5):
     values.append(x * 2)
 '''
+# Generator Expression:
+# Here we're creating a list using a list generator expression
+
+'''
+values = [x * 2 for x in range(10)]
+for x in values:
+    print(x)
+
+'''
+# This is perfectly fine, but there are times you may be working with a large dataset
+# or an infinite set of data, in those situations you have stored those values in a memory.
+# However, it takes a lot of memory. Gnerator objects are iterable just like lists.
+# Unlike list Generator objects generate a new value in each iteration, they don't store all the values in memory
+
+
+# How to get size of an object:
+'''
+
+from sys import getsizeof
+values = (x * 2 for x in range(1000)) 
+print("gen:", getsizeof(values))
+
+
+# Even when you change the range of numbers to say 100000, the generator object remains consistent.
+# In contrast, if we use a list comprehension expression here, we will end up with a list of 100000 items.
+# For example:
+
+
+values = [x * 2 for x in range(100000)]
+print("list:", getsizeof(values))
+'''
+
+# Unpacking Operator:
+'''
+numbers = [1, 2, 3]
+print(numbers)
+print(1, 2, 3)
+print(*numbers)
+'''
+# This is the unpacking operator. The application of this is when creating list
+
+# We can unpack any iterables, it doesn't have to be a list only
+# For example:
+'''
+values = list(range(5))
+values = [*range(5), *"Hello"]
+print(values)
+'''
+# We can also unpack a string, like *"Hello"
+
+# Furthermore, using this operator, we can combine multiple lists
+'''
+first = [1, 2]
+second = [3]
+values = [*first, "a", *second, *"Hello"]
+print(values)
+'''
+
+# We can also unpack dictionaries but we need to use two asteriks **
+'''
+first = {"x": 1}
+second = {"x": 10, "y": 2}
+combined = {**first, **second, "z": 1}
+print(combined)
+'''
+# Note that in the result, the value of x is 10 and not 1, this is because
+# If you have multiple items with the same key the last value will be used.
+# To recap: We can use the unpacking operator to take out individual values in any iterable
+
+# EXERCISES:
+# Write a program to find the most repeated character in this text:
+# sentence = "This is a common interview question"
+
+# Define the sentence
+'''
+sentence = "This is a common interview question"
+# Remove spaces to only consider characters
+sentence = sentence.replace("", "")
+# create a dictionary to count occurrences of each character
+char_count = {}
+for char in sentence:
+    char = char.lower()  # make it case-insensitive
+    char_count[char] = char_count.get(char, 0) + 1
+
+# Find the character with the highest frequency
+most_repeated = max(char_count, key=char_count.get)
+print(
+    f"The most repeated character is '{most_repeated}' with {char_count[most_repeated]} occurrences.")
+'''
+
+# ANOTHER APPROACH TO ANSWER THE QUESTION:
+'''
+from pprint import pprint
+sentence = "This is a common interview question"
+# Define an empty dictionry
+char_frequency = {}
+for char in sentence:
+    if char in char_frequency:
+        char_frequency[char] += 1
+    else:
+        char_frequency[char] = 1
+char_frequency_sorted = sorted(
+    char_frequency.items(), key=lambda kv: kv[1], reverse=True)
+print(char_frequency_sorted[0])
+'''
+
+# Handling Exceptions:
+'''
+try:
+    age = int(input("Age: "))
+except ValueError:
+    print("You didn't enter a valid age.")
+else:
+    print("No exceptions were thrown.")
+print("Execution continues.")
+'''
+
+
+# Handliing Different Exceptions
+'''
+try:
+    age = int(input("Age: "))
+    xfactor = 10 / age
+except ValueError:
+    print("You didn't enter a valid age.")
+except ZeroDivisionError:
+    print("Age cannot be zero")
+else:
+    print("No exceptions were thrown.")
+    
+'''
+
+
+# For multiple types of exceptions separated by a comma:
+'''
+try:
+    age = int(input("Age: "))
+    xfactor = 10 / age
+except (ValueError, ZeroDivisionError):
+    print("You didn't enter a valid age.")
+else:
+    print("No exceptions were thrown.")
+'''
+
+# Note: When python executes the code that we have in the try block,
+# if any of the statements throws an exception that matches one of the except clauses,
+# that except clause is executed and the other except clauses are ignored.
+
+'''
+try:
+    file = open("app.py")
+    age = int(input("Age: "))
+    xfactor = 10 / age
+except (ValueError, ZeroDivisionError):
+    print("You didn't enter a valid age.")
+else:
+    print("No exceptions were thrown.")
+finally:
+    file.close()
+
+'''
+
+# The finally clause is use to release external resources. It is always executed whether we have
+# an except clause or not. This is the perfect place to close files, database connections and
+# network connections.
