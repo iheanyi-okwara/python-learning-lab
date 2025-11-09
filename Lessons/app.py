@@ -878,6 +878,7 @@ else:
     print("No exceptions were thrown.")
 '''
 
+# Cleaning up:
 # Note: When python executes the code that we have in the try block,
 # if any of the statements throws an exception that matches one of the except clauses,
 # that except clause is executed and the other except clauses are ignored.
@@ -899,3 +900,69 @@ finally:
 # The finally clause is use to release external resources. It is always executed whether we have
 # an except clause or not. This is the perfect place to close files, database connections and
 # network connections.
+
+# The With Statement:
+# The with statement is used to automatically release external resources
+# For example:
+'''
+try:
+    with open("app.py") as file:
+        print("File opened.")
+    age = int(input("Age: "))
+    xfactor = 10 / age
+except (ValueError, ZeroDivisionError):
+    print("You didn't enter a valid age.")
+else:
+    print("No exceptions were thrown.")
+
+'''
+
+# We have magic methods - these are methods that start with two underlines __
+'''
+try:
+    with open("app.py") as file:
+        print("File opened.")
+        file.__exit
+    age = int(input("Age: "))
+    xfactor = 10 / age
+except (ValueError, ZeroDivisionError):
+    print("You didn't enter a valid age.")
+else:
+    print("No exceptions were thrown.")
+
+'''
+
+# Content Management Protocol - refers to when an object supports these two methods (enter and exit)
+# and we can use that object with the With Statement; python will automatically call the exit method
+# and there it will release the external resources, amd that is the reason we don't need a finally clause here.
+
+
+# However, there are times you might be working with multiple external resources, let's say you want to
+# read some data from one file and write it to another file:
+
+'''
+try:
+    with open("app.py") as file, open("another.txt") as target:
+        print("File opened.")
+        
+    age = int(input("Age: "))
+    xfactor = 10 / age
+except (ValueError, ZeroDivisionError):
+    print("You didn't enter a valid age.")
+else:
+    print("No exceptions were thrown.")
+
+'''
+# Raising Exceptions:
+
+
+def calculate_xfactor(age):
+    if age <= 0:
+        raise ValueError("Age cannot be 0 or less.")
+    return 10 / age
+
+
+try:
+    calculate_xfactor(-1)
+except ValueError as error:
+    print(error)
