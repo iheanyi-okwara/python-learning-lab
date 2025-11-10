@@ -971,7 +971,7 @@ except ValueError as error:
 
 # Cost of Raising Exceptions
 # Using the timeit function we can calculate the execution time of some python code
-
+'''
 from timeit import timeit
 code1 = """
 def calculate_xfactor(age):
@@ -987,8 +987,12 @@ except ValueError as error:
 """
 print("first code=", timeit(code1, number=10000))
 
+'''
+
 
 # Trying different approach:
+'''
+
 code2 = """
 def calculate_xfactor(age):
     if age <= 0:
@@ -1002,3 +1006,5 @@ if xfactor == None:
 """
 print("first code=", timeit(code1, number=10000))
 print("second code=", timeit(code2, number=10000))
+
+'''
