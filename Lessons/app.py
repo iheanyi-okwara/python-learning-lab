@@ -1008,3 +1008,13 @@ print("first code=", timeit(code1, number=10000))
 print("second code=", timeit(code2, number=10000))
 
 '''
+# Classes in python:
+# A clas is the blueprint for creating new objects
+# example:
+x = 1
+print(type(x))
+
+# An object is an instance of a class
+# Example
+# Class: Human (defines all the attributes of a human)
+# Objects: John, Mary, Jack
