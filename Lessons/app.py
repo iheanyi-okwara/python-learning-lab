@@ -1018,3 +1018,16 @@ print(type(x))
 # Example
 # Class: Human (defines all the attributes of a human)
 # Objects: John, Mary, Jack
+
+# Creating Classes:
+
+
+class Point:
+    def draw(self):
+        print("draw")
+
+
+point = Point()
+print(type(point))
+print(isinstance(point, Point))
+print(isinstance(point, int))
