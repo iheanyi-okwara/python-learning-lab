@@ -1011,8 +1011,10 @@ print("second code=", timeit(code2, number=10000))
 # Classes in python:
 # A clas is the blueprint for creating new objects
 # example:
+'''
 x = 1
 print(type(x))
+'''
 
 # An object is an instance of a class
 # Example
@@ -1021,7 +1023,7 @@ print(type(x))
 
 # Creating Classes:
 
-
+'''
 class Point:
     def draw(self):
         print("draw")
@@ -1031,3 +1033,33 @@ point = Point()
 print(type(point))
 print(isinstance(point, Point))
 print(isinstance(point, int))
+'''
+
+# Constructors:
+
+'''
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def draw(self):
+        print("draw")
+
+
+point = Point(1, 2)
+print(point.x)
+'''
+
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def draw(self):
+        print(f"Point ({self.x}, {self.y})")
+
+
+point = Point(1, 2)
+point.draw()
