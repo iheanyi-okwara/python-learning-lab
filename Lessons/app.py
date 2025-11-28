@@ -1140,7 +1140,7 @@ point.draw()
 # They are called automatically by python interpreter depending on the way we use our objects and classes
 # Search for "Python 3 magic methods" on the internet, to see a complete list of them.
 
-
+'''
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -1155,3 +1155,23 @@ class Point:
 
 point = Point(1, 2)
 print(point)
+
+'''
+# Comparing Objects:
+
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __eq__(self, other):
+        return self.x == other.x and self.y == other.y
+
+    def __gt__(self, other):
+        return self.x > other.x and self.y > other.y
+
+
+point = Point(10, 20)
+other = Point(1, 2)
+print(point < other)
