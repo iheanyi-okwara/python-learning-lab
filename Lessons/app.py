@@ -1051,7 +1051,7 @@ point = Point(1, 2)
 print(point.x)
 '''
 
-
+'''
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -1062,4 +1062,72 @@ class Point:
 
 
 point = Point(1, 2)
+point.draw()
+'''
+
+# Class Vs Instance Attributes
+
+'''
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def draw(self):
+        print(f"Point ({self.x}, {self.y})")
+
+
+point = Point(1, 2)
+point.draw()
+
+another = Point(3, 4)
+another.draw()
+
+'''
+
+# Class level attributes are shared across all instances of a class.
+# if you change its value, the change is visible across all objects of that type
+# For example:
+
+'''
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def draw(self):
+        print(f"Point ({self.x}, {self.y})")
+
+
+Point.default_color = "Red"  # same applies to "yellow" or any other color of choice
+
+point = Point(1, 2)
+print(point.default_color)
+print(Point.default_color)
+point.draw()
+
+another = Point(3, 4)
+print(another.default_color)
+another.draw()
+
+'''
+
+# Class Vs Instance Methods:
+
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    @classmethod
+    def zero(cls):
+        cls(0, 0)
+        return cls(0, 0)
+
+    def draw(self):
+        print(f"Point ({self.x}, {self.y})")
+
+
+point = Point.zero()
 point.draw()
