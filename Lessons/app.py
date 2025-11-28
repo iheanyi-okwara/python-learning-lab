@@ -1114,7 +1114,7 @@ another.draw()
 
 # Class Vs Instance Methods:
 
-
+'''
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -1131,3 +1131,27 @@ class Point:
 
 point = Point.zero()
 point.draw()
+
+'''
+
+# Magic Methods:
+
+# These are methods that have two underscores at the beginning nd end of their names
+# They are called automatically by python interpreter depending on the way we use our objects and classes
+# Search for "Python 3 magic methods" on the internet, to see a complete list of them.
+
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return f"({self.x}, {self.y})"
+
+    def draw(self):
+        print(f"Point ({self.x}, {self.y})")
+
+
+point = Point(1, 2)
+print(point)
