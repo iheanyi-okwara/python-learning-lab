@@ -1342,7 +1342,7 @@ print(m.age)
 
 # The Object Class:
 
-
+'''
 class Animal(object):
     def __init__(self):
         self.age = 1
@@ -1369,3 +1369,36 @@ print(isinstance(m, Animal))
 print(isinstance(m, object))
 print(issubclass(Mammal, Animal))
 print(issubclass(Mammal, object))
+'''
+
+
+# Method Overriding:
+
+
+class Animal:
+    def __init__(self):
+        print("Animal Constructor")
+        self.age = 1
+
+    def eat(self):
+        print("eat")
+
+
+class Mammal(Animal):
+    def __init__(self):
+        print("Mammal Constructor")
+        self.weight = 2
+        super().__init__()  # Use this code to stop an override
+
+    def walk(self):
+        print("walk")
+
+
+class Fish(Animal):
+    def swim(self):
+        print("swim")
+
+
+m = Mammal()
+print(m.age)
+print(m.weight)
