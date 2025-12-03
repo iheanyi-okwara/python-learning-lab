@@ -1214,7 +1214,7 @@ for tag in cloud:
 
 '''
 
-
+'''
 class TagCloud:
     def __init__(self):
         self.tags = {}
@@ -1240,3 +1240,72 @@ cloud.add("Python")
 cloud.add("python")
 cloud.add("python")
 print(cloud.tags)
+
+'''
+
+# Properties:
+
+'''
+class Product:
+    def __init__(self, price):
+        self.set_price(price)
+
+    def get_price(self):
+        return self.__price
+
+    def set_price(self, value):
+        if value < 0:
+            raise ValueError("Price cannot be negative.")
+        self.__price = value
+
+
+product = Product(-50)
+
+'''
+
+# The above code is unpythonic. It is not python's best practice.
+# However, we have a better way to achieve the same result, and that's when we use a property
+# A property is an object that sits in front of an attribute and allows us to get or set the value of that attribute
+# For example:
+
+'''
+class Product:
+    def __init__(self, price):
+        self.set_price(price)
+
+    def get_price(self):
+        return self.__price
+
+    def set_price(self, value):
+        if value < 0:
+            raise ValueError("Price cannot be negative.")
+        self.__price = value
+
+    price = property(get_price, set_price)
+
+
+product = Product(10)
+product.price = -1
+print(product.price)
+'''
+
+# Another way of getting a cleaner same result is to use a decorator
+
+
+class Product:
+    def __init__(self, price):
+        self.price = price
+
+    @property
+    def price(self):
+        return self.__price
+
+    @price.setter
+    def price(self, value):
+        if value < 0:
+            raise ValueError("Price cannot be negative.")
+        self.__price = value
+
+
+product = Product(-10)
+print(product.price)
