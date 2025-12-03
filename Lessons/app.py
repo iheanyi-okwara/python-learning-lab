@@ -1291,7 +1291,7 @@ print(product.price)
 
 # Another way of getting a cleaner same result is to use a decorator
 
-
+'''
 class Product:
     def __init__(self, price):
         self.price = price
@@ -1309,3 +1309,32 @@ class Product:
 
 product = Product(-10)
 print(product.price)
+'''
+
+# Inheritance
+
+
+class Animal:
+    def __init__(self):
+        self.age = 1
+
+    def eat(self):
+        print("eat")
+
+# Animal: Parent, Base
+# Mammal: Child, Sub
+
+
+class Mammal(Animal):
+    def walk(self):
+        print("walk")
+
+
+class Fish(Animal):
+    def swim(self):
+        print("swim")
+
+
+m = Mammal()
+m.eat()
+print(m.age)
