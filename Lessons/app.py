@@ -1430,7 +1430,7 @@ class Chicken(Bird):
 # Similar to Multi-level inheritance, multiple inheritance can creare all sorts of issues in your programs
 # you will end up with classes that inherit features that they shouldn't.
 
-
+'''
 class Employee:
     def greet(self):
         print("Employee Greet")
@@ -1463,3 +1463,35 @@ class Swimmer:
 
 class FlyingFish(Flyer, Swimmer):
     pass
+'''
+
+# A good example of Inheritance:
+
+
+class InvalidOperationError(Exception):
+    pass
+
+
+class Stream:
+    def __init__(self):
+        self.opened = False
+
+    def open(self):
+        if self.opened:
+            raise InvalidOperationError("Stream is already open")
+        self.opened = True
+
+    def open(self):
+        if not self.opened:
+            raise InvalidOperationError("Stream is already closed")
+        self.opened = False
+
+
+class FileStream(Stream):
+    def read(self):
+        print("Reading data from a file")
+
+
+class NetworkStream(Stream):
+    def read(self):
+        print("Reading data from a network")
