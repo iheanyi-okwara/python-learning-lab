@@ -1544,7 +1544,7 @@ stream.open()
 
 # Polymorphism:
 
-
+'''
 from abc import ABC, abstractmethod
 class UIControl(ABC):
     @abstractmethod
@@ -1571,6 +1571,7 @@ ddl = DropDownList()
 textbox = TextBox()
 draw([ddl, textbox])
 
+'''
 # Using this approach we can render the user interface of an application
 # Imagine we have a form with a bunch of textboxes, dropdown lists, radio buttons e.t.c.
 # We could have a list of all these objects and pass that list to a function like draw;
@@ -1579,3 +1580,30 @@ draw([ddl, textbox])
 # Poly == many
 # morph == forms
 # polymorphism means many forms
+
+
+# Duck Typing:
+# If it walks like a duck and quacks like a duck,then it is a duck. This is how python sees objects
+# It doesn't check the type of objects, it only looks for the existence of certain methods in the object
+# To achieve polymorphic behavior, we don't necessarily need a base class like UIControl, because python
+# supports duck typing
+
+
+# Extendig Built-in Types:
+class Text(str):
+    def duplicate(self):
+        return self + self
+
+
+# text = Text("Python")
+# print(text.lower())
+# print(text.duplicate())
+
+class TrackableList(list):
+    def append(self, object):
+        print("Append called")
+        return super().append(object)
+
+
+list = TrackableList()
+list.append("1")
