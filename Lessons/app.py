@@ -1424,3 +1424,42 @@ class Chicken(Bird):
 # Employee - Person - LivingCreature - Thing
 # Always avoid multi-level inheritance in your codes
 '''
+
+
+# Mutiple Inheritance:
+# Similar to Multi-level inheritance, multiple inheritance can creare all sorts of issues in your programs
+# you will end up with classes that inherit features that they shouldn't.
+
+
+class Employee:
+    def greet(self):
+        print("Employee Greet")
+
+
+class Person:
+    def greet(self):
+        print("Person Greet")
+
+
+class Manager(Employee, Person):
+    pass
+
+
+manager = Manager()
+manager.greet()
+
+# A good example of multiple inheritance
+
+
+class Flyer:
+    def fly(self):
+        pass
+
+
+class Swimmer:
+    def swim(self):
+        pass
+
+
+class FlyingFish(Flyer, Swimmer):
+    pass
