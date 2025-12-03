@@ -1499,7 +1499,7 @@ class NetworkStream(Stream):
 
 # Abstract Base Classes:
 
-from abc import ABC, abstractmethod
+'''
 class InvalidOperationError(Exception):
     pass
 
@@ -1540,3 +1540,42 @@ class MemoryStream(Stream):
 
 stream = MemoryStream()
 stream.open()
+'''
+
+# Polymorphism:
+
+
+from abc import ABC, abstractmethod
+class UIControl(ABC):
+    @abstractmethod
+    def draw(self):
+        pass
+
+
+class TextBox(UIControl):
+    def draw(self):
+        print("TextBox")
+
+
+class DropDownList(UIControl):
+    def draw(self):
+        print("DropDownList")
+
+
+def draw(controls):
+    for control in controls:
+        control.draw()
+
+
+ddl = DropDownList()
+textbox = TextBox()
+draw([ddl, textbox])
+
+# Using this approach we can render the user interface of an application
+# Imagine we have a form with a bunch of textboxes, dropdown lists, radio buttons e.t.c.
+# We could have a list of all these objects and pass that list to a function like draw;
+# and that function would take care of rendering the entire form. A draw function doesn't know
+# what kind of control it is working with.
+# Poly == many
+# morph == forms
+# polymorphism means many forms
