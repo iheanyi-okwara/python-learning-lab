@@ -1374,7 +1374,7 @@ print(issubclass(Mammal, object))
 
 # Method Overriding:
 
-
+'''
 class Animal:
     def __init__(self):
         print("Animal Constructor")
@@ -1402,3 +1402,25 @@ class Fish(Animal):
 m = Mammal()
 print(m.age)
 print(m.weight)
+'''
+
+# Multi-level Inheritance:
+# It prevents code duplication and allows us to reuse codes
+
+'''
+class Animal:
+    def eat(self):
+        print("eat")
+
+
+class Bird(Animal):
+    def fly(self):
+        print("fly")
+
+class Chicken(Bird):
+    pass
+
+# Another example:
+# Employee - Person - LivingCreature - Thing
+# Always avoid multi-level inheritance in your codes
+'''
