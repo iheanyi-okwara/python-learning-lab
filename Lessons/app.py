@@ -1590,6 +1590,7 @@ draw([ddl, textbox])
 
 
 # Extendig Built-in Types:
+'''
 class Text(str):
     def duplicate(self):
         return self + self
@@ -1607,3 +1608,40 @@ class TrackableList(list):
 
 list = TrackableList()
 list.append("1")
+'''
+
+# Data Classes:
+# We use classes to bundle data and functionality into one unit. With larger programs, you may come across
+# classes that don't have any behavior, no methods, only data.
+
+'''
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __eq__(self, other):
+        return self.x == other.x and self.y == other.y
+
+
+p1 = Point(1, 2)
+p2 = Point(1, 2)
+print(p1 == p2)
+print(id(p1))
+print(id(p2))
+'''
+
+from collections import namedtuple
+Point = namedtuple("Point", ["x", "y"])
+p1 = Point(x=1, y=2)
+print(p1.x)
+p1 = Point(x=10, y=2)
+p2 = Point(x=1, y=2)
+print(p1 == p2)
+
+# If you are working with classes that have only data and no method, you might wanna use a namedtuple instead
+# it will help you write less code. These tuples are better than regular tuples, because here we have attributes
+# on the Point object just like the attributes we had in our classes.
+# These namedtuple are immutable, once created, they cannot be modified.
+# We can't set attribute value once you have initialized it. If you really need to modify these objects, you need
+# to create a new point object.
