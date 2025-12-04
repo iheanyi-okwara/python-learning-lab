@@ -1631,6 +1631,8 @@ print(id(p1))
 print(id(p2))
 '''
 
+
+'''
 from collections import namedtuple
 Point = namedtuple("Point", ["x", "y"])
 p1 = Point(x=1, y=2)
@@ -1638,6 +1640,7 @@ print(p1.x)
 p1 = Point(x=10, y=2)
 p2 = Point(x=1, y=2)
 print(p1 == p2)
+'''
 
 # If you are working with classes that have only data and no method, you might wanna use a namedtuple instead
 # it will help you write less code. These tuples are better than regular tuples, because here we have attributes
@@ -1645,3 +1648,22 @@ print(p1 == p2)
 # These namedtuple are immutable, once created, they cannot be modified.
 # We can't set attribute value once you have initialized it. If you really need to modify these objects, you need
 # to create a new point object.
+
+
+# Creating Modules:
+
+# As our programs grow, we should split our programs into multiple files called modules
+'''
+from sales import calc_shipping, calc_tax
+
+
+calc_shipping()
+calc_tax
+'''
+
+# OR
+'''
+import sales
+
+sales.calc_shipping()
+'''
