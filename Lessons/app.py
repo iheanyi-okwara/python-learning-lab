@@ -24,54 +24,75 @@ print(course_name[:])
 
 '''
 
-# course = "python programming"
-# print(course.upper())  # UPPER CASE
-# print(course.lower())  # lower case
-# print(course.title())  # Title
-# print(course.strip())  # removes white spaces
-# print(course.lstrip())  # removes white spaces from the left
-# print(course.rstrip())  # removes white spaces from the right
-# print(course.find("Pro"))
-# print(course.replace("p", "j"))
-# print("pro" in course)
-# print("swift" not in course)
+'''
+course = "python programming"
+print(course.upper())  # UPPER CASE
+print(course.lower())  # lower case
+print(course.title())  # Title
+# removes white spaces from both beginning and end of a string
+print(course.strip())
+print(course.lstrip())  # removes white spaces from the left
+print(course.rstrip())  # removes white spaces from the right
+print(course.find("Pro"))
+print(course.replace("p", "j"))
+print("pro" in course)
+print("swift" not in course)
+'''
+
 
 # Standard Arithmetic Operators:
-# print(10 + 3)
-# print(10 - 3)
-# print(10 * 3)
-# print(10 / 3)
-# print(10 // 3)
-# print(10 % 3)
-# print(10 ** 3)
+'''
+print(10 + 3)
+print(10 - 3)
+print(10 * 3)
+print(10 / 3)
+print(10 // 3)
+print(10 % 3)
+print(10 ** 3)
 
-# Rounding Numbers
+'''
 
-# print(round(2.9))
-# print(abs(-2.9))
+# Rounding Numbers:
+# Rounding numbers is a common task in programming, for example,
+# when we want to display a price or a percentage,
+# we want to round it to a certain number of decimal places. In python,
+# we can use the round function to round a number to a given number of decimal places. For example:
 
+'''
+print(round(2.9))
+print(abs(-2.9))
+'''
 
-# maths module
+# Maths Module:
+# Math module contains a lot of useful functions for working with numbers, for example:
 
-# print(math.ceil(2.2))
+'''
+print(math.floor(2.9))
 
-# x = input("x: ")
-# y = int(x) + 1
-# print(f"x: {x}, y: {y}")
+print(math.ceil(2.2))
+
+x = input("x: ")
+y = int(x) + 1
+print(f"x: {x}, y: {y}")
+'''
 
 # int(x)
 # float(x)
 # bool(x)
 # str(x)
 
-# Falsy values
+# Falsy values:
+# Falsy values are values that evaluate to False in a boolean context, examples include:
 # ""
 # 0
 # None
 
+# Truthy values are values that evaluate to True in a boolean context, examples include:
 # print(bool("False"))
 
-# comparison operators:
+
+# Comparison operators:
+# Comparison operators are used to compare two values and return a boolean value (True or False)
 # 10 > 3
 # 10 >= 3
 # 10 < 20
@@ -82,127 +103,244 @@ print(course_name[:])
 # "bag" > "apple"
 # "bag" == "bag"
 
-# temperature = 25
-# if temperature > 30:
-#     print("It's warm")
-#     print("Drink water")
-# elif temperature > 20:
-#     print("It's nice")
-# else:
-#     print("It's cold")
-# print("Done")
 
+# Conditional statements:
+# Conditional statements are used to execute a block of code based on a condition, for example:
+
+'''
+temperature = 25
+if temperature > 30:
+    print("It's warm")
+    print("Drink water")
+elif temperature > 20:
+    print("It's nice")
+else:
+    print("It's cold")
+print("Done")
+'''
 
 # Ternary operator:
-# age = 17
-# if age >= 18:
-#     print("Eligible")
-# else:
-#     print("Not eligible")
+# This is a one line if else statement, it is used to assign a value to a variable based on a condition, for example:
 
-########
-# age = 22
-# message = "Eligible" if age >= 18 else "Not eligible"
-# print(message)
+'''
+age = 17
+if age >= 18:
+    print("Eligible")
+else:
+    print("Not eligible")
 
-###########
+The above code can be written in one line using the ternary operator as follows:
+#######
+age = 22
+message = "Eligible" if age >= 18 else "Not eligible"
+print(message)
+'''
+
+#################
 # Logical Operators:
-# and
-# or
-# not
+# Logical operators are used to combine multiple conditions and return a boolean value (True or False), examples include:
+# and: returns True if both conditions are True, otherwise it returns False
+# or: returns True if at least one of the conditions is True, otherwise it returns False
+# not: returns True if the condition is False, otherwise it returns False
 
+'''
 # examples:
-# high_income = False
-# good_credit = True
-# student = False
+high_income = False
+good_credit = True
+student = False
 
-# if (high_income or good_credit) and not student:
-#     print("Eligible")
-# else:
-#     print("Not eligible")
+if (high_income or good_credit) and not student:
+    print("Eligible")
+else:
+    print("Not eligible")
+'''
+
+# Short-circuit Evaluation: means that when evaluating a logical expression,
+# python will stop evaluating as soon as it finds a condition that is False for an and operator or True for an or operator.
+# In python,logical operators are short-circuit operators, which means that they evaluate the second operand only if necessary.
+
 
 ###########
-# This is called chaining comparison operators
-# age should be between 18 and 65
-# age = 22
-# if 18 <= age < 65:  # This expression is the sme as this "age >= 18 and age < 65".
-#     print("Eligible")
+# Chaining Comparison Operators:
 
-# We use loop to create repetition
-# for number in range(3):
-#     print("Attempt", number + 1, (number + 1) * ".")
+# In python, we can chain comparison operators to compare multiple values in a single expression, for example:
+# If you want to implement a rule that says age should be between 18 and 65
+# Firstly, you should define the age variable and set it to a value:
+
+'''
+age = 22
+if 18 <= age < 65:  # This expression is the same as this "age >= 18 and age < 65".
+    print("Eligible")
+'''
+
+# QUIZ:
+'''
+if 10 == "10":
+    print("a")
+elif "bag" > "apple" and "bag" > "cat":
+    print("b")
+else:
+    print("c")
+'''
+
+# Loops:
+# Loops are used to execute a block of code multiple times,
+# for example, when we want to perform a task for a certain number of times or when we want to iterate over a collection of items.
+# In python, we have two types of loops: for loop and while loop.
+# We use loop to create repetition, for example, if we want to print "Attempt" three times, we can use a for loop as follows:
+
+'''
+for number in range(3):
+    print("Attempt", number + 1, (number + 1) * ".")
 
 # OR
-# for number in range(1, 4):
-#     print("Attempt", number, number * ".")
+for number in range(1, 4):
+    print("Attempt", number, number * ".")
 
-# for number in range(1, 10, 2):
-#     print("Attempt", number, number * ".")
+for number in range(1, 10, 2):
+    print("Attempt", number, number * ".")
+'''
 
-
-# successful = True
-# for number in range(3):
-#     print("Attempt")
-#     if successful:
-#         print("Successful")
-#         break
-
-
-# successful = False
-# for number in range(3):
-#     print("Attempt")
-#     if successful:
-#         print("Successful")
-#         break
-# else:
-#     print("Attempted 3 times and failed")
-
-# for x in range(5):
-#     for y in range(3):
-#         print(f"({x}, {y})")
-# print(type(5))
-# print(type(range(5)))
-
-# # Iterable
-# for x in "Python":
-#     print(x)
-
-# number = 100
-# while number > 0:
-#     print(number)
-#     number //= 2
-
-
-# command = ""
-# while command.lower() != "quit":
-#     command = input(">")
-#     print("ECHO", command)
-
-
-# while True:
-#     command = input(">")
-#     print("ECHO", command)
-#     if command.lower() == "quit":
-#         break
-
-# count = 0
-# for x in range(1, 10):
-#     if x % 2 == 0:
-#         count += 1
-#         print(x)
-# print(f"We have {count} even numbers")
-
+# For..else:
+# For loops can also have an else clause, which is executed when the loop is finished, for example:
 
 '''
+successful = True
+for number in range(3):
+    print("Attempt")
+    if successful:
+        print("Successful")
+        break
+
+'''
+
+# Note: The break statement is used to exit the loop when a certain condition is met,
+# in this case, when the successful variable is True.
+# If the loop finishes without encountering a break statement,
+# the else clause will be executed. For example:
+
+'''
+successful = False
+for number in range(3):
+    print("Attempt")
+    if successful:
+        print("Successful")
+        break
+else:
+    print("Attempted 3 times and failed")
+
+'''
+
+# Nested Loops:
+# In python, we can have loops inside loops, this is called nested loops, for example:
+
+'''
+for x in range(5):  # This is the outer loop
+    for y in range(3): # This is the inner loop
+        print(f"({x}, {y})")
+'''
+
+
+# What is range function returns? It returns a range object, which is an iterable that generates a sequence of numbers.
+# For example:
+'''
+print(type(5)) # With this function we can check the type of an object, in this case, it returns <class 'int'> because 5 is an integer.
+# This returns <class 'range'> because range(5) is a range object, which is an iterable that generates a sequence of numbers from 0 to 4.
+print(type(range(5)))
+
+'''
+
+# # Iterable:
+# In python, an iterable is an object that can be iterated over,
+# for example, a list, a tuple, a string, a range, etc.
+# We can use a for loop to iterate over an iterable, for example:
+
+'''
+for x in "Python":
+    print(x)
+
+'''
+
+# In each iteration, the for loop takes the next item from the iterable and assigns it to the variable x,
+# and then executes the block of code inside the loop. In each iteration, x will have a different value,
+# which is the next item in the iterable.
+
+# We can iterate over a list of numbers using a for loop, for example:
+
+'''
+for x in [1, 2, 3, 4]:
+    print(x)
+
+'''
+
+# In python we have another type of loop called while loop,
+# which is used to execute a block of code as long as a certain condition is true,
+# for example:
+
+'''
+number = 100
+while number > 0:
+    print(number)
+    number //= 2
+
+# The above code will print the value of number and then divide it by 2 until it becomes 0 or less
+'''
+
+
+# We can also use a while loop to create an infinite loop.
+# Infinite Loops: are loops that never end,
+# they are useful when we want to keep executing a block of code until a certain condition is met, for example:
+
+'''
+command = ""
+while command.lower() != "quit":
+    command = input(">")
+    print("ECHO", command)
+'''
+
+# The concept of an infinite loop is that the loop will keep executing until the user breaks out of it.
+# In this case, the loop will keep asking the user for input and echoing it back until the user types "quit".
+# Once the user types "quit", the condition in the while loop will become false and the loop will exit.
+
+'''
+while True:
+    command = input(">")
+    print("ECHO", command)
+    if command.lower() == "quit":
+        break
+
+'''
+
+# Exercise:
+# Write a program to display all even numbers between 1 and 10,
+# and count how many even numbers we have. Print the message "We have x even numbers" where x is the count of even numbers.
+
+'''
+count = 0
+for number in range(1, 10):
+    if number % 2 == 0:
+        count += 1
+        print(number)
+print(f"We have {count} even numbers.")
+'''
+
+
 # FUNCTIONS:
-# def greet(first_name, last_name):
-#     print(f"Hi {first_name} {last_name}")
-#     print("Welcome aboard")
-
-
-# greet("Iheanyi", "Okwara")
 
 '''
+def greet(first_name, last_name):
+    print(f"Hi {first_name} {last_name}")
+    print("Welcome aboard")
+
+
+greet("Iheanyi", "Okwara")
+
+'''
+# Difference between a parameter and an argument:
+# A parameter is a variable that is defined in the function definition, it is a placeholder for the value that will be passed to the function when it is called.
+# An argument is the value that is passed to the function when it is called, it is the actual value that is used in the function.
+# For example, in the function definition above, first_name and last_name are parameters,
+# and when we call the function greet("Iheanyi", "Okwara"), "Iheanyi" and "Okwara" are arguments.
 
 '''
 def greet(name):
@@ -210,12 +348,11 @@ def greet(name):
 
 
 greet("Iheanyi")
-
 '''
 
 
 # Types of functions:
-'''
+
 # In programming we have two types of functions
 # 1 - function that performs a task
 # 2 = function that returns a value
@@ -228,12 +365,12 @@ greet("Iheanyi")
 # file = open("content.txt", "w")
 # file.write(message)
 
-'''
-
 
 # Keyword arguements:
 
 '''
+
+
 def increment(number, by):
     return number + by
 
@@ -255,6 +392,8 @@ print(increment(2, by=1))
 
 # Default arguement:
 '''
+
+
 def increment(number, by=1):
     return number + by
 
@@ -276,6 +415,7 @@ print(increment(2, 5))
 # xargs
 '''
 
+
 def multiply(*numbers):
     for number in numbers:
         print(number)
@@ -288,6 +428,8 @@ multiply(2, 3, 4, 5)
 # The difference is that we cannot modify tuples (add or remove)
 
 '''
+
+
 def multiply(*numbers):
     total = 1
     for number in numbers:
@@ -301,6 +443,8 @@ print(multiply(2, 3, 4, 5))
 # xxargs
 
 '''
+
+
 def save_user(**user):
     print(user)
 
@@ -320,6 +464,8 @@ save_user(id=1, name="John", age=22)
 # EXERCISE:
 
 '''
+
+
 def fizz_buzz(input):
     if (input % 3 == 0) and (input % 5 == 0):
         return "FizzBuzz"
@@ -412,7 +558,7 @@ print(letters.index("a"))  # To find the index of a letter
 letters = ["a", "b", "c"]
 if "d" in letters:
     print(letters.index("d"))
-    
+
 # To return the number of occurences of a given item use: count
 letters = ["a", "b", "c"]
 print(letters.count("d"))
@@ -567,7 +713,6 @@ if not browsing_session:
 '''
 # FIFO (First In - First Out)
 '''
-from collections import deque
 queue = deque([])
 queue.append(1)
 queue.append(2)
@@ -642,7 +787,6 @@ print("y", y)
 # and tuples by default.
 # To use an array, you need to import it from the array module
 '''
-from array import array
 numbers = array("i", [1, 2, 3])
 numbers.append(4)  # To add a number at the end
 numbers.insert(2)  # To add a number at a specific index
@@ -752,8 +896,7 @@ for x in values:
 # How to get size of an object:
 '''
 
-from sys import getsizeof
-values = (x * 2 for x in range(1000)) 
+values = (x * 2 for x in range(1000))
 print("gen:", getsizeof(values))
 
 
@@ -826,7 +969,6 @@ print(
 
 # ANOTHER APPROACH TO ANSWER THE QUESTION:
 '''
-from pprint import pprint
 sentence = "This is a common interview question"
 # Define an empty dictionry
 char_frequency = {}
@@ -863,7 +1005,7 @@ except ZeroDivisionError:
     print("Age cannot be zero")
 else:
     print("No exceptions were thrown.")
-    
+
 '''
 
 
@@ -944,7 +1086,7 @@ else:
 try:
     with open("app.py") as file, open("another.txt") as target:
         print("File opened.")
-        
+
     age = int(input("Age: "))
     xfactor = 10 / age
 except (ValueError, ZeroDivisionError):
@@ -956,6 +1098,7 @@ else:
 # Raising Exceptions:
 
 '''
+
 
 def calculate_xfactor(age):
     if age <= 0:
@@ -972,7 +1115,6 @@ except ValueError as error:
 # Cost of Raising Exceptions
 # Using the timeit function we can calculate the execution time of some python code
 '''
-from timeit import timeit
 code1 = """
 def calculate_xfactor(age):
     if age <= 0:
@@ -1024,6 +1166,8 @@ print(type(x))
 # Creating Classes:
 
 '''
+
+
 class Point:
     def draw(self):
         print("draw")
@@ -1038,6 +1182,8 @@ print(isinstance(point, int))
 # Constructors:
 
 '''
+
+
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -1052,6 +1198,8 @@ print(point.x)
 '''
 
 '''
+
+
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -1068,6 +1216,8 @@ point.draw()
 # Class Vs Instance Attributes
 
 '''
+
+
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -1090,6 +1240,8 @@ another.draw()
 # For example:
 
 '''
+
+
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -1115,6 +1267,8 @@ another.draw()
 # Class Vs Instance Methods:
 
 '''
+
+
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -1141,6 +1295,8 @@ point.draw()
 # Search for "Python 3 magic methods" on the internet, to see a complete list of them.
 
 '''
+
+
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -1160,6 +1316,8 @@ print(point)
 # Comparing Objects:
 
 '''
+
+
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -1181,6 +1339,8 @@ print(point < other)
 # Supporting Arithmetic Operations
 
 '''
+
+
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -1215,6 +1375,8 @@ for tag in cloud:
 '''
 
 '''
+
+
 class TagCloud:
     def __init__(self):
         self.tags = {}
@@ -1246,6 +1408,8 @@ print(cloud.tags)
 # Properties:
 
 '''
+
+
 class Product:
     def __init__(self, price):
         self.set_price(price)
@@ -1269,6 +1433,8 @@ product = Product(-50)
 # For example:
 
 '''
+
+
 class Product:
     def __init__(self, price):
         self.set_price(price)
@@ -1292,6 +1458,8 @@ print(product.price)
 # Another way of getting a cleaner same result is to use a decorator
 
 '''
+
+
 class Product:
     def __init__(self, price):
         self.price = price
@@ -1314,6 +1482,8 @@ print(product.price)
 # Inheritance
 
 '''
+
+
 class Animal:
     def __init__(self):
         self.age = 1
@@ -1343,6 +1513,8 @@ print(m.age)
 # The Object Class:
 
 '''
+
+
 class Animal(object):
     def __init__(self):
         self.age = 1
@@ -1375,6 +1547,8 @@ print(issubclass(Mammal, object))
 # Method Overriding:
 
 '''
+
+
 class Animal:
     def __init__(self):
         print("Animal Constructor")
@@ -1408,6 +1582,8 @@ print(m.weight)
 # It prevents code duplication and allows us to reuse codes
 
 '''
+
+
 class Animal:
     def eat(self):
         print("eat")
@@ -1417,8 +1593,10 @@ class Bird(Animal):
     def fly(self):
         print("fly")
 
+
 class Chicken(Bird):
     pass
+
 
 # Another example:
 # Employee - Person - LivingCreature - Thing
@@ -1431,6 +1609,8 @@ class Chicken(Bird):
 # you will end up with classes that inherit features that they shouldn't.
 
 '''
+
+
 class Employee:
     def greet(self):
         print("Employee Greet")
@@ -1463,11 +1643,15 @@ class Swimmer:
 
 class FlyingFish(Flyer, Swimmer):
     pass
+
+
 '''
 
 # A good example of Inheritance:
 
 '''
+
+
 class InvalidOperationError(Exception):
     pass
 
@@ -1495,11 +1679,15 @@ class FileStream(Stream):
 class NetworkStream(Stream):
     def read(self):
         print("Reading data from a network")
+
+
 '''
 
 # Abstract Base Classes:
 
 '''
+
+
 class InvalidOperationError(Exception):
     pass
 
@@ -1545,7 +1733,8 @@ stream.open()
 # Polymorphism:
 
 '''
-from abc import ABC, abstractmethod
+
+
 class UIControl(ABC):
     @abstractmethod
     def draw(self):
@@ -1591,6 +1780,8 @@ draw([ddl, textbox])
 
 # Extendig Built-in Types:
 '''
+
+
 class Text(str):
     def duplicate(self):
         return self + self
@@ -1615,6 +1806,8 @@ list.append("1")
 # classes that don't have any behavior, no methods, only data.
 
 '''
+
+
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -1633,7 +1826,6 @@ print(id(p2))
 
 
 '''
-from collections import namedtuple
 Point = namedtuple("Point", ["x", "y"])
 p1 = Point(x=1, y=2)
 print(p1.x)
@@ -1654,7 +1846,6 @@ print(p1 == p2)
 
 # As our programs grow, we should split our programs into multiple files called modules
 '''
-from sales import calc_shipping, calc_tax
 
 
 calc_shipping()
@@ -1663,7 +1854,6 @@ calc_tax
 
 # OR
 '''
-import sales
 
 sales.calc_shipping()
 '''
