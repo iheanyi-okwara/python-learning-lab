@@ -342,7 +342,15 @@ greet("Iheanyi", "Okwara")
 # For example, in the function definition above, first_name and last_name are parameters,
 # and when we call the function greet("Iheanyi", "Okwara"), "Iheanyi" and "Okwara" are arguments.
 
+
+# Types of functions:
+
+# In programming we have two types of functions
+# 1 - function that performs a task
+# 2 = function that calculates and returns a value
+
 '''
+# Function that performs a task:
 def greet(name):
     print(f"Hi {name}")
 
@@ -350,37 +358,45 @@ def greet(name):
 greet("Iheanyi")
 '''
 
-
-# Types of functions:
-
-# In programming we have two types of functions
-# 1 - function that performs a task
-# 2 = function that returns a value
-
-# def get_greeting(name):
-#     return f"Hi {name}"
-
-
-# message = get_greeting("Iheanyi")
-# file = open("content.txt", "w")
-# file.write(message)
-
-
-# Keyword arguements:
+# A better example of a function that performs a task is a function that writes a message to a file, for example:
 
 '''
+def get_greeting(name):
+    return f"Hi {name}"
 
 
+message = get_greeting("Iheanyi")
+file = open("content.txt", "w")
+file.write(message)
+'''
+
+# In python all functions by default return None if we don't specify a return value.
+# None is a special value in python that represents the absence of a value,
+# it is often used to indicate that a function does not return anything or that a variable does not have a value.
+
+
+# Function that returns a value:
+# For example, the built-in function len() returns the length of a string, list, tuple, etc.
+# round() is another built-in function that returns the rounded value of a number.
+
+
+# Keyword Arguements:
+# Keyword arguement is a way to pass arguments to a function by using the name of the parameter, rather than the position of the argument in the function call.
+# This allows us to pass arguments in any order and makes our code more readable.
+# When we call a function, we can pass the arguments in any order by using the name of the parameter, for example:
+
+'''
 def increment(number, by):
     return number + by
 
 
 result = increment(2, 1)
 print(result)
+'''
 
 # OR
 
-
+'''
 def increment(number, by):
     return number + by
 
@@ -390,7 +406,9 @@ print(increment(2, by=1))
 '''
 
 
-# Default arguement:
+# Default Arguements:
+# The default argument is a value that is assigned to a parameter when we define the function,
+# it is used when we call the function without passing a value for that parameter, for example:
 '''
 
 
@@ -399,11 +417,14 @@ def increment(number, by=1):
 
 
 print(increment(2))
-
+'''
 
 # OR
 
+# If we want to override the default value of the parameter,
+# we can pass a value for that parameter when we call the function, for example:
 
+'''
 def increment(number, by=1):
     return number + by
 
@@ -412,7 +433,11 @@ print(increment(2, 5))
 
 '''
 
+
 # xargs
+# xargs is a way to pass a variable number of arguments to a function,
+# it allows us to pass any number of arguments to a function,
+# and it will be treated as a tuple inside the function, for example:
 '''
 
 
@@ -441,6 +466,9 @@ print(multiply(2, 3, 4, 5))
 '''
 
 # xxargs
+# xxargs is a way to pass a variable number of keyword arguments to a function,
+# it allows us to pass any number of keyword arguments to a function,
+# and it will be treated as a dictionary inside the function, for example:
 
 '''
 
@@ -451,15 +479,39 @@ def save_user(**user):
 
 save_user(id=1, name="John", age=22)
 
+'''
+# When we use **user, it will be treated as a dictionary inside the function,
+# and we can access the values using the keys,
+# we can pass multiple keyword arguments to the function,
+# and it will be treated as a dictionary inside the function, for example:
 
 # Example 2:
 
+'''
 def save_user(**user):
     print(user["name"])
 
 
 save_user(id=1, name="John", age=22)
 '''
+
+# Scope of Variables: refers to the region of the code where a variable is defined and can be accessed, for example:
+
+'''
+def greet(name):
+    message = f"Hi {name}"
+    print(message)
+
+
+def send_email(name):
+    message = "Hi there"
+    print(message)
+'''
+
+# In python we have two types of scope: global scope and local scope,
+# variables defined outside of a function have a global scope and can be accessed anywhere in the code,
+# while variables defined inside a function have a local scope and can only be accessed within that function.
+
 
 # EXERCISE:
 
