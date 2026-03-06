@@ -1202,24 +1202,35 @@ print("first code=", timeit(code1, number=10000))
 print("second code=", timeit(code2, number=10000))
 
 '''
-# Classes in python:
-# A clas is the blueprint for creating new objects
-# example:
+
+
+# CLASSES IN PYTHON:
+# A class is a blueprint for creating new objects,
+# it defines the attributes and methods that the objects created from the class will have.
+# For example:
+
 '''
 x = 1
 print(type(x))
+
+This returns <class 'int'> because x is an integer, and int is a class in python.
 '''
+
 
 # An object is an instance of a class
 # Example
+
 # Class: Human (defines all the attributes of a human)
 # Objects: John, Mary, Jack
 
-# Creating Classes:
+
+# CREATING CLASSES:
+# In creating clsses, we use the Pascal naming convention,
+# which is to use PascalCase for class names,
+# here the first letter of each word is capitalized and there are no underscores between words,
+# for example:
 
 '''
-
-
 class Point:
     def draw(self):
         print("draw")
@@ -1227,11 +1238,24 @@ class Point:
 
 point = Point()
 print(type(point))
+
+# This returns <class '__main__.Point'> because point is an instance of the Point class, 
+# and the Point class is defined in the main module.
+
 print(isinstance(point, Point))
+# This returns True because point is an instance of the Point class.
+
 print(isinstance(point, int))
+# This returns False because point is not an instance of the int class.
 '''
 
-# Constructors:
+# ATTRIBUTES AND METHODS:
+# Attributes are the data that is associated with an object, for example, the x and y coordinates of a point, the name and age of a person, etc.
+# Methods are the functions that are associated with an object, for example, the draw method of a point, the eat method of a person, etc.
+
+# CONSTRUCTORS:
+# Are special methods that are called when an object is created,
+# they are used to initialize the attributes of the object, for example:
 
 '''
 
