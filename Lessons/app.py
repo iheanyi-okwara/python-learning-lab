@@ -1253,12 +1253,12 @@ print(isinstance(point, int))
 # Attributes are the data that is associated with an object, for example, the x and y coordinates of a point, the name and age of a person, etc.
 # Methods are the functions that are associated with an object, for example, the draw method of a point, the eat method of a person, etc.
 
+
 # CONSTRUCTORS:
 # Are special methods that are called when an object is created,
 # they are used to initialize the attributes of the object, for example:
 
 '''
-
 
 class Point:
     def __init__(self, x, y):
@@ -1287,13 +1287,21 @@ class Point:
 
 point = Point(1, 2)
 point.draw()
+
+# self is a reference to the current instance of the class, 
+# it is used to access the attributes and methods of the class, 
+# for example, self.x and self.y are used to access the x and y attributes of the Point class, 
+# and self.draw() is used to call the draw method of the Point class.
 '''
 
-# Class Vs Instance Attributes
+
+# CLASS VS INSTANCE ATTRIBUTES:
+# Instance attributes are unique to each instance of a class,
+# they are defined in the constructor and can have different values for different objects of the same class,
+# for example:
+
 
 '''
-
-
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -1315,9 +1323,8 @@ another.draw()
 # if you change its value, the change is visible across all objects of that type
 # For example:
 
+
 '''
-
-
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -1340,11 +1347,13 @@ another.draw()
 
 '''
 
-# Class Vs Instance Methods:
+
+# CLASS VS INSTANCE METHODS:
+# Instance methods are methods that are defined in a class and can be called on an instance of that class,
+# they can access and modify the instance attributes of the object,
+# for example:
 
 '''
-
-
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -1352,7 +1361,6 @@ class Point:
 
     @classmethod
     def zero(cls):
-        cls(0, 0)
         return cls(0, 0)
 
     def draw(self):
@@ -1362,17 +1370,20 @@ class Point:
 point = Point.zero()
 point.draw()
 
+# A DECORATOR is a function that takes another function as an argument and extends the behavior of that function without explicitly modifying it, 
+# for example, @classmethod is a decorator that is used to define a class method, which is a method that is bound to the class and not the instance of the class, 
+# it can access and modify the class attributes of the class, for example, in the code above, 
+# the zero method is a class method that creates a new instance of the Point class with x and y coordinates set to 0, 
+# and it can be called on the class itself rather than on an instance of the class.  
 '''
 
-# Magic Methods:
+# MAGIC METHODS:
 
-# These are methods that have two underscores at the beginning nd end of their names
+# These are methods that have two underscores at the beginning and end of their names
 # They are called automatically by python interpreter depending on the way we use our objects and classes
 # Search for "Python 3 magic methods" on the internet, to see a complete list of them.
 
 '''
-
-
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -1389,10 +1400,12 @@ point = Point(1, 2)
 print(point)
 
 '''
-# Comparing Objects:
+
+# COMPARING OBJECTS:
+# By default, when we compare two objects of a class, python will compare their memory addresses
+# For example:
 
 '''
-
 
 class Point:
     def __init__(self, x, y):
@@ -1410,7 +1423,13 @@ point = Point(10, 20)
 other = Point(1, 2)
 print(point < other)
 
+# Comparison magic methods are used to compare objects of a class, 
+# for example, __eq__ is used to compare if two objects are equal,
+# __gt__ is used to compare if one object is greater than another object, and so on. 
+# In the code above, we have defined the __eq__ and __gt__ magic methods to compare the x and y attributes of the Point class. 
+# When we compare point < other, it will call the __gt__ method and return True because 10 > 1 and 20 > 2.
 '''
+
 
 # Supporting Arithmetic Operations
 
