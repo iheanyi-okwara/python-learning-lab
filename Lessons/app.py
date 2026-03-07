@@ -1431,11 +1431,9 @@ print(point < other)
 '''
 
 
-# Supporting Arithmetic Operations
+# SUPPORTING ARITHMETIC OPERATIONS:
 
 '''
-
-
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -1450,14 +1448,25 @@ other = Point(1, 2)
 combined = point + other
 print(combined.x)
 
+# When we use the + operator to add two objects of the Point class, 
+# it will call the __add__ method and return a new instance of the 
+# Point class with x and y coordinates set to the sum of the x and y coordinates of the two objects.
+# When we print combined.x, it will return 11 because 10 + 1 = 11. 
 '''
 
-#  Making Custom Containers:
+
+#  CREATING CUSTOM CONTAINERS:
+# A container is an object that can hold a collection of objects,
+# for example, a list, a tuple, a set, a dictionary, etc.
 
 
 # With this class we can keep track of number of various tags on a blog
 
 # +class TagCloud:
+# TagCloud is a custom container that we can use to keep track of the number of various tags on a blog,
+# it has a dictionary to store the tags and their counts, and it has methods to add tags,
+# get the count of a tag, set the count of a tag, get the number of tags, and iterate over the tags.
+
 '''
 Thigs we can do with the TagCloud
 
@@ -1470,7 +1479,7 @@ for tag in cloud:
 '''
 
 '''
-
+# How to implement the TagCloud class:
 
 class TagCloud:
     def __init__(self):
@@ -1574,7 +1583,11 @@ product = Product(-10)
 print(product.price)
 '''
 
-# Inheritance
+# INHERITANCE:
+# Inheritance is a way to create a new class that is a modified version of an existing class,
+# the new class is called a child class or a subclass, and the existing class is called a parent class or a base class,
+# the child class inherits all the attributes and methods of the parent class, and it can also have its own attributes and methods,
+# for example:
 
 '''
 
@@ -1586,8 +1599,8 @@ class Animal:
     def eat(self):
         print("eat")
 
-# Animal: Parent, Base
-# Mammal: Child, Sub
+# Animal: Parent, Base class
+# Mammal: Child, Sub class
 
 
 class Mammal(Animal):
@@ -1605,7 +1618,13 @@ m.eat()
 print(m.age)
 '''
 
-# The Object Class:
+# THE OBJECT CLASS:
+
+#  In python, all classes inherit from a built-in class called object,
+# which is the base class for all classes in python,
+# it provides some default behavior for all classes,
+# such as the ability to compare objects, to get the string representation of an object,
+# to get the hash value of an object, etc.
 
 '''
 
