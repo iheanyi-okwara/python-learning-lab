@@ -1663,7 +1663,10 @@ print(issubclass(Mammal, object))
 '''
 
 
-# Method Overriding:
+# METHOD OVERRIDING:
+# When a child class defines a method with the same name as a method in the parent class,
+# the method in the child class is said to override the method in the parent class,
+# for example:
 
 '''
 
@@ -1695,13 +1698,30 @@ class Fish(Animal):
 m = Mammal()
 print(m.age)
 print(m.weight)
+
+# To explain the above code, we have defined a class called Animal with a constructor that initializes the age attribute and a method called eat. 
+# We have also defined a child class called Mammal that inherits from Animal and has its own constructor that initializes the weight attribute 
+# and calls the parent constructor using super().__init__().
+# When we create an instance of the Mammal class, it has both age and weight attributes.
+
+# Therefore method overriding means replacing a method in the parent class with a new implementation in the child class, 
+# and we can use the super() function to call the parent method from the child method if we want to.
+
+# Inheritance is a powerful feature of object-oriented programming that allows us to create new classes based on existing classes,
+# it promotes code reusability and makes our code more organized and easier to maintain. 
+
+# It prevents code duplication and allows us to reuse codes, 
+# for example, if we have a class called Animal that has a method called eat, 
+# we can create a child class called Mammal that inherits from the Animal class 
+# and it will automatically have the eat method without us having to write it again in the Mammal class.
 '''
 
-# Multi-level Inheritance:
-# It prevents code duplication and allows us to reuse codes
+
+# MULTI-LEVEL INHERITANCE:
+# In multi-level inheritance, a child class can also be a parent class for another child class,
+# for example:
 
 '''
-
 
 class Animal:
     def eat(self):
@@ -1716,10 +1736,35 @@ class Bird(Animal):
 class Chicken(Bird):
     pass
 
+'''
+
+'''
+The above code is an example of multi-level inheritance, 
+where the Chicken class inherits from the Bird class, 
+and the Bird class inherits from the Animal class.
+
+In this example, the Chicken class inherits all the features of the Bird class,
+but a Chicken cannot fly. So in the implementation we can create a Chicken object and call the fly method on it.
+
+This is an example of inheritance abuse.
+'''
 
 # Another example:
 # Employee - Person - LivingCreature - Thing
 # Always avoid multi-level inheritance in your codes
+
+'''
+Too much of inheritance can create a lot of problems in your code, 
+it can make your code more complex and harder to maintain,
+it can also create a lot of issues in your code, 
+for example, if you have a class called Employee that inherits from a class called Person, 
+and the Person class inherits from a class called LivingCreature, 
+and the LivingCreature class inherits from a class called Thing, 
+then you have a lot of classes that are related to each other, 
+and if you want to make a change in one of the classes, 
+you have to make sure that you don't break the other classes that are related to it, 
+and this can create a lot of issues in your code, 
+and it can also make your code more complex and harder to maintain.
 '''
 
 
@@ -1728,7 +1773,7 @@ class Chicken(Bird):
 # you will end up with classes that inherit features that they shouldn't.
 
 '''
-
+# A bad example of multiple inheritance:
 
 class Employee:
     def greet(self):
@@ -1747,8 +1792,9 @@ class Manager(Employee, Person):
 manager = Manager()
 manager.greet()
 
-# A good example of multiple inheritance
 
+
+# A good example of multiple inheritance
 
 class Flyer:
     def fly(self):
