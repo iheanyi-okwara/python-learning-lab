@@ -1699,21 +1699,27 @@ m = Mammal()
 print(m.age)
 print(m.weight)
 
-# To explain the above code, we have defined a class called Animal with a constructor that initializes the age attribute and a method called eat. 
-# We have also defined a child class called Mammal that inherits from Animal and has its own constructor that initializes the weight attribute 
-# and calls the parent constructor using super().__init__().
-# When we create an instance of the Mammal class, it has both age and weight attributes.
+'''
 
-# Therefore method overriding means replacing a method in the parent class with a new implementation in the child class, 
-# and we can use the super() function to call the parent method from the child method if we want to.
 
-# Inheritance is a powerful feature of object-oriented programming that allows us to create new classes based on existing classes,
-# it promotes code reusability and makes our code more organized and easier to maintain. 
+'''
 
-# It prevents code duplication and allows us to reuse codes, 
-# for example, if we have a class called Animal that has a method called eat, 
-# we can create a child class called Mammal that inherits from the Animal class 
-# and it will automatically have the eat method without us having to write it again in the Mammal class.
+To explain the above code, we have defined a class called Animal with a constructor that initializes the age attribute and a method called eat. 
+We have also defined a child class called Mammal that inherits from Animal and has its own constructor that initializes the weight attribute 
+and calls the parent constructor using super().__init__().
+When we create an instance of the Mammal class, it has both age and weight attributes.
+
+Therefore method overriding means replacing a method in the parent class with a new implementation in the child class, 
+and we can use the super() function to call the parent method from the child method if we want to.
+
+Inheritance is a powerful feature of object-oriented programming that allows us to create new classes based on existing classes,
+it promotes code reusability and makes our code more organized and easier to maintain. 
+
+It prevents code duplication and allows us to reuse codes, 
+for example, if we have a class called Animal that has a method called eat, 
+we can create a child class called Mammal that inherits from the Animal class 
+and it will automatically have the eat method without us having to write it again in the Mammal class.
+
 '''
 
 
@@ -1903,13 +1909,14 @@ stream = MemoryStream()
 stream.open()
 '''
 
+
 # POLYMORPHISM:
 # Polymorphism is the ability of an object to take on many forms,
 # it is the ability of a class to provide different implementations of a method,
 # for example:
 
-'''
 
+'''
 
 class UIControl(ABC):
     @abstractmethod
@@ -1957,27 +1964,47 @@ polymorphism means many forms
 ...
 
 
-'''
-# Duck Typing:
-
-# If it walks like a duck and quacks like a duck,then it is a duck. This is how python sees objects
-# It doesn't check the type of objects, it only looks for the existence of certain methods in the object
-# To achieve polymorphic behavior, we don't necessarily need a base class like UIControl, because python
-# supports duck typing
 
 '''
-# Extendig Built-in Types:
+# DUCK TYPING:
+'''
+Duck typing is a programming style that does not look at the type of an object, 
+but rather focuses on the methods and properties that an object has.
+
+If it walks like a duck and quacks like a duck,then it is a duck. This is how python sees objects
+It doesn't check the type of objects, it only looks for the existence of certain methods in the object
+To achieve polymorphic behavior, we don't necessarily need a base class like UIControl, because python
+supports duck typing.
+'''
 
 
+# EXTENDING BUILT-IN TYPES:
+# In python, we can extend built-in types like str, list, dict, etc.
+# by creating a new class that inherits from the built-in type,
+# for example:
 
+
+'''
 class Text(str):
     def duplicate(self):
         return self + self
 
 
-# text = Text("Python")
-# print(text.lower())
-# print(text.duplicate())
+text = Text("Python")
+print(text.lower())
+print(text.duplicate())
+'''
+
+# In the above code, we have created a new class called Text that inherits from the built-in str class,
+# and we have added a new method called duplicate that returns the string duplicated.
+# We can use all the methods of the str class on the Text class,
+# and we can also use the duplicate method that we have defined in the Text class.
+
+
+'''
+class Text(str):
+    def duplicate(self):
+        return self + self
 
 class TrackableList(list):
     def append(self, object):
@@ -1989,8 +2016,15 @@ list = TrackableList()
 list.append("1")
 '''
 
-# Data Classes:
-# We use classes to bundle data and functionality into one unit. With larger programs, you may come across
+# In the above code, we have created a new class called TrackableList that inherits from the built-in list class,
+# and we have overridden the append method to print a message before calling the original append method using super().
+# When we create an instance of the TrackableList class and call the append method, it will print "Append called" before adding the item to the list.
+
+
+# DATA CLASSES:
+
+# We use classes to bundle data and functionality into one unit.
+# With larger programs, you may come across
 # classes that don't have any behavior, no methods, only data.
 
 '''
@@ -2030,11 +2064,15 @@ print(p1 == p2)
 # to create a new point object.
 
 
-# Creating Modules:
-
+# CREATING MODULES:
+# A module is a file that contains a collection of related functions, classes, and variables,
+# it is used to organize code and to reuse code across multiple programs.
 # As our programs grow, we should split our programs into multiple files called modules
-'''
 
+# To use a module, we need to import it using the import statement,
+# for example:
+
+'''
 
 calc_shipping()
 calc_tax
