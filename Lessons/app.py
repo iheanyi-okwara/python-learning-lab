@@ -2025,7 +2025,9 @@ list.append("1")
 
 # We use classes to bundle data and functionality into one unit.
 # With larger programs, you may come across
-# classes that don't have any behavior, no methods, only data.
+# classes that don't have any behavior, no methods, only data,
+# then you can use a namedtuple instead of a class,
+# it is a more concise way to create a class that only has data and no methods.
 
 '''
 
@@ -2048,13 +2050,23 @@ print(id(p2))
 
 
 '''
+from collections import namedtuple
+
+
 Point = namedtuple("Point", ["x", "y"])
 p1 = Point(x=1, y=2)
 print(p1.x)
+
+# Namedtuples are immutable, so we can't change the value of x or y once we have created a point object,
+# If you need to change the value of x or y, you need to create a new point object with the new values.
+
 p1 = Point(x=10, y=2)
 p2 = Point(x=1, y=2)
 print(p1 == p2)
 '''
+# In the above code, we have created a namedtuple called Point that has two fields: x and y.
+# We can create instances of the Point namedtuple and access the fields using dot notation.
+
 
 # If you are working with classes that have only data and no method, you might wanna use a namedtuple instead
 # it will help you write less code. These tuples are better than regular tuples, because here we have attributes
@@ -2073,13 +2085,19 @@ print(p1 == p2)
 # for example:
 
 '''
+from sales import calc_shipping, calc_tax
 
 calc_shipping()
-calc_tax
+calc_tax()
+
 '''
 
 # OR
+
 '''
+import sales
 
 sales.calc_shipping()
+sales.calc_tax()
 '''
+# In the above code, we have imported the sales module and called the calc_shipping and calc_tax functions from the sales module.
