@@ -1655,6 +1655,11 @@ print(isinstance(m, Animal))
 print(isinstance(m, object))
 print(issubclass(Mammal, Animal))
 print(issubclass(Mammal, object))
+
+# To explain the above code, we have defined a class called Animal that inherits from the object class,
+# and we have defined two child classes called Mammal and Fish that inherit from the Animal class. 
+# When we create an instance of the Mammal class and check if it is an instance of the Animal class or the object class, it returns True for both checks.
+# This is because in Python, all classes inherit from the object class. 
 '''
 
 
