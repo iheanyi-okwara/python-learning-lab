@@ -1848,11 +1848,19 @@ class NetworkStream(Stream):
 
 '''
 
-# Abstract Base Classes:
+# ABSTRACT BASE CLASSES:
+
+'''
+An abstract base class is a class that cannot be instantiated,
+it is only used as a base class for other classes,
+it is defined using the ABC module in python,
+and it is used to define a common interface for a group of related classes,
+it can also define abstract methods that must be implemented by the child classes,
+for example:
 
 '''
 
-
+'''
 class InvalidOperationError(Exception):
     pass
 
@@ -1895,7 +1903,10 @@ stream = MemoryStream()
 stream.open()
 '''
 
-# Polymorphism:
+# POLYMORPHISM:
+# Polymorphism is the ability of an object to take on many forms,
+# it is the ability of a class to provide different implementations of a method,
+# for example:
 
 '''
 
@@ -1924,27 +1935,39 @@ def draw(controls):
 ddl = DropDownList()
 textbox = TextBox()
 draw([ddl, textbox])
+'''
+
 
 '''
-# Using this approach we can render the user interface of an application
-# Imagine we have a form with a bunch of textboxes, dropdown lists, radio buttons e.t.c.
-# We could have a list of all these objects and pass that list to a function like draw;
-# and that function would take care of rendering the entire form. A draw function doesn't know
-# what kind of control it is working with.
-# Poly == many
-# morph == forms
-# polymorphism means many forms
+Using polymorphism, we can write code that works with objects of different classes as long as they implement the same interface.
+We can render the user interface of an application using polymorphism, 
+we can have a list of all the controls in the form and pass that list to a function like draw, 
+and that function will take care of rendering the entire form, it doesn't know what kind of control it is working with, 
+it just knows that it has a draw method that it can call.
+
+Using this approach we can render the user interface of an application
+Imagine we have a form with a bunch of textboxes, dropdown lists, radio buttons e.t.c.
+We could have a list of all these objects and pass that list to a function like draw;
+and that function would take care of rendering the entire form. A draw function doesn't know
+what kind of control it is working with.
+
+Poly == many
+morph == forms
+polymorphism means many forms
+...
 
 
+'''
 # Duck Typing:
+
 # If it walks like a duck and quacks like a duck,then it is a duck. This is how python sees objects
 # It doesn't check the type of objects, it only looks for the existence of certain methods in the object
 # To achieve polymorphic behavior, we don't necessarily need a base class like UIControl, because python
 # supports duck typing
 
-
-# Extendig Built-in Types:
 '''
+# Extendig Built-in Types:
+
 
 
 class Text(str):
